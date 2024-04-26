@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
-import todoModel from "../models/todo.js";
+import TodoModel from "../models/todo.js";
 
 export async function getTodos(req, res) {
   try {
-    const todos = await todoModel.find(
-      {},
+    const userId = req.params.userId;
+    const todos = await TodoModel.find(
+      { createdBy: userId },
       {
         title: true,
         description: true,
@@ -25,28 +25,6 @@ export async function getTodos(req, res) {
   }
 }
 
-export async function getTodoById(req, res) {
-  try {
-    const todoId = req.params.todoId;
-    const todo = await todoModel.findById(todoId, {
-      title: true,
-      description: true,
-      id: "$_id",
-      _id: false,
-    });
-    res.json({
-      success: true,
-      message: "get successfully",
-      result: todo,
-    });
-  } catch (err) {
-    res.json({
-      success: false,
-      message: "Server error",
-    });
-  }
-}
-
 export async function createTodo(req, res) {
   try {
     const { title, description, task = "pending" } = req.body;
@@ -54,7 +32,7 @@ export async function createTodo(req, res) {
       throw new Exception("task is not valid");
     }
 
-    const todo = await todoModel.create({
+    const todo = await TodoModel.create({
       title,
       description,
       task,
@@ -81,7 +59,7 @@ export async function updateTodo(req, res) {
       throw new Exception("task is not valid");
     }
 
-    await todoModel.findByIdAndUpdate(
+    await TodoModel.findByIdAndUpdate(
       todoId,
       {
         title,
@@ -109,7 +87,7 @@ export async function deleteTodo(req, res) {
   try {
     const todoId = req.params.todoId;
 
-    await todoModel.findByIdAndDelete(todoId);
+    await TodoModel.findByIdAndDelete(todoId);
     await res.json({
       message: "Deleted successfully",
     });

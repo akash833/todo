@@ -1,7 +1,6 @@
 import express from "express";
 import {
   getTodos,
-  getTodoById,
   createTodo,
   updateTodo,
   deleteTodo,
@@ -9,8 +8,7 @@ import {
 
 const router = express.Router();
 
-router.get("/", getTodos);
-router.get("/:todoId", getTodoById);
+router.get("/:userId", getTodos);
 router.post("/", createTodo);
 router.patch("/:todoId", updateTodo);
 router.delete("/:todoId", deleteTodo);

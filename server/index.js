@@ -7,13 +7,15 @@ dotenv.config();
 const PORT = process.env.PORT || 4000;
 
 import connectDb from "./config/database.js";
-import router from "./routes/todo.js";
 connectDb();
+import router from "./routes/todo.js";
+import userRouter from "./routes/user.js";
 
 app.use(cors());
 
 app.use(express.json());
 
+app.use("/", userRouter);
 app.use("/todo", router);
 
 app.listen(PORT, () => {
