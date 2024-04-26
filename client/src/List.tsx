@@ -1,4 +1,4 @@
-import { TodoItem } from "./App";
+import { TodoItem } from "./Components/Todo";
 
 export type ListType = {
   item: TodoItem;
