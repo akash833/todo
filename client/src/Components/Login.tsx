@@ -62,6 +62,7 @@ const LoginPage = () => {
         </div>
         <div className="loginContainer">
           <h2 className="login">Login!</h2>
+          <br />
           <form onSubmit={handleSubmit}>
             <TextField
               label="Username"
@@ -98,6 +99,18 @@ const LoginPage = () => {
                 label="Password"
               />
             </FormControl>
+            <span onClick={handleClick}>
+              <Button
+                variant="text"
+                sx={{
+                  ":hover": {
+                    textDecorationLine: "underline",
+                  },
+                }}
+              >
+                Forget Password?
+              </Button>
+            </span>
             <br />
             <br />
 

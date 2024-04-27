@@ -1,0 +1,15 @@
+.header{
+    background-color: rgb(42, 70, 249);
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 120px;
+    align-items: center;
+    position: relative;
+}
+
+.app{
+    font-size: 30px;
+    color: aliceblue;
+
+}

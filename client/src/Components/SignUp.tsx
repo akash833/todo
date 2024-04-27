@@ -70,6 +70,7 @@ const SignUpPage = () => {
         </div>
         <div className="loginContainer">
           <h2 className="login">Sign Up!</h2>
+          <br />
           <form onSubmit={handleSubmit}>
             <TextField
               label="Username"
