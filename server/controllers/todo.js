@@ -28,6 +28,7 @@ export async function getTodos(req, res) {
 export async function createTodo(req, res) {
   try {
     const { title, description, task = "pending" } = req.body;
+    const userId = req.body.userId;
     if (["done" | "pending" | "later"].includes(task)) {
       throw new Exception("task is not valid");
     }
@@ -36,6 +37,7 @@ export async function createTodo(req, res) {
       title,
       description,
       task,
+      createdBy: userId,
     });
     await res.json({
       message: "Created successfully",

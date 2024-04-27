@@ -9,7 +9,7 @@ import {
 const router = express.Router();
 
 router.get("/:userId", getTodos);
-router.post("/", createTodo);
+router.post("/:userId", createTodo);
 router.patch("/:todoId", updateTodo);
 router.delete("/:todoId", deleteTodo);
 

@@ -12,7 +12,7 @@ export async function loginUser(req, res) {
         message: "User does not exist",
       });
     }
-    const isPasswordValid = await bcrypt.compare(user.password, password);
+    const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return res.json({
         success: false,

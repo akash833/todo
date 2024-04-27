@@ -39,7 +39,7 @@ const TodoForm = () => {
 
   const createTodo = async (e: any) => {
     e.preventDefault();
-    await axios.post("http://localhost:4000/todo",{
+    await axios.post(`http://localhost:4000/todo/${userId}`,{
       title,
       description,
       userId
