@@ -1,5 +1,5 @@
 import TodoModel from "../models/todo.js";
-
+// Always use Async await and try catch
 export async function getTodos(req, res) {
   try {
     const userId = req.params.userId;
@@ -12,6 +12,7 @@ export async function getTodos(req, res) {
         _id: false,
       }
     );
+    
     res.json({
       success: true,
       message: "get successfully",
@@ -28,9 +29,6 @@ export async function getTodos(req, res) {
 export async function createTodo(req, res) {
   try {
     const { title, description, task = "pending" } = req.body;
-    if (["done" | "pending" | "later"].includes(task)) {
-      throw new Exception("task is not valid");
-    }
 
     const todo = await TodoModel.create({
       title,

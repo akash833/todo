@@ -1,10 +1,10 @@
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import LoginPage from './Components/Login.tsx';
-import SignupPage from './Components/SignUp.tsx';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import TodoForm from './Components/Todo.tsx';
-import App from './App.tsx';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import LoginPage from "./Components/Login.tsx";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import TodoForm from "./Components/Todo.tsx";
+import App from "./App.tsx";
+import SignUpPage from "./Components/SignUp.tsx";
 
 const route = [
   {
@@ -20,10 +20,10 @@ const route = [
     element: <LoginPage />,
   },
   {
-    path: "/singup",
-    element: <SignupPage />,
-  }
-];  
+    path: "/sign-up",
+    element: <SignUpPage />,
+  },
+];
 
 const router = createBrowserRouter(route);
 
