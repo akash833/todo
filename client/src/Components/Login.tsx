@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./Login.css";
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +34,10 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
+    <div className="loginWrapper">
+      <div className="childWrapper">
+        
+      </div>
       <h2>Login Page</h2>
       <ToastContainer />
       <form onSubmit={handleSubmit}>
