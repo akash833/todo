@@ -1,6 +1,7 @@
 import TodoModel from "../models/todo.js";
+import { Request, Response } from "express";
 
-export async function getTodos(req, res) {
+export async function getTodos(req: Request, res:Response) {
   try {
     const userId = req.params.userId;
     const todos = await TodoModel.find(
@@ -25,12 +26,12 @@ export async function getTodos(req, res) {
   }
 }
 
-export async function createTodo(req, res) {
+export async function createTodo(req: Request, res:Response) {
   try {
-    const { title, description, task = "pending" } = req.body;
+    const { title, description, task = "pending" } = req.body as Record<string,string>;
     const userId = req.body.userId;
-    if (["done" | "pending" | "later"].includes(task)) {
-      throw new Exception("task is not valid");
+    if (["done" , "pending" , "later"].includes(task)) {
+      throw new Error("task is not valid");
     }
 
     const todo = await TodoModel.create({
@@ -53,12 +54,12 @@ export async function createTodo(req, res) {
   }
 }
 
-export async function updateTodo(req, res) {
+export async function updateTodo(req: Request, res:Response) {
   try {
     const { title, description, task } = req.body;
     const todoId = req.params.todoId;
-    if (["done" | "pending" | "later"].includes(task)) {
-      throw new Exception("task is not valid");
+    if (["done", "pending", "later"].includes(task)) {
+      throw new Error("task is not valid");
     }
 
     await TodoModel.findByIdAndUpdate(
@@ -85,7 +86,7 @@ export async function updateTodo(req, res) {
     });
   }
 }
-export async function deleteTodo(req, res) {
+export async function deleteTodo(req: Request, res:Response) {
   try {
     const todoId = req.params.todoId;
 
