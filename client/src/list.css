@@ -1,0 +1,58 @@
+.listWrapper{
+    display: flex;
+    width: 80%;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 30px;
+    margin: 30px auto;
+    border-radius: 10px;
+    background-color: rgb(190, 190, 190);
+}
+
+.title{
+    font-size: 36px;
+}
+
+
+
+.desc{
+    font-size: 16px;
+    margin: 10px 20px;
+}
+
+.icons{
+    display: flex;
+    gap:20px;
+    font-size: 30px;
+}
+
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+}
+
+.inputField{
+    padding: 20px 50px;
+}
+
+
+.btn{
+    text-align: center;
+    margin: 30px 50px;
+}
+
+
+
+
+
+
+
+.addTask{
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: rgb(44, 44, 248);
+}

@@ -1,29 +1,40 @@
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import LoginPage from './Components/Login.tsx';
-import SignupPage from './Components/SignUp.tsx';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import TodoForm from './Components/Todo.tsx';
-import App from './App.tsx';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import LoginPage from "./Components/feature/Login/Login.tsx";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import TodoForm from "./Components/feature/Todo/Todo.tsx";
+import App from "./App.tsx";
+import SignUpPage from "./Components/feature/Signin/SignUp.tsx";
+import { path } from "./constant/path.tsx";
+import ForgotPassword from "./Components/feature/ForgotPassword/ForgotPassword.tsx";
+import Profile from "./Components/feature/profile/profile.tsx";
 
 const route = [
   {
-    path: "/",
+    path: path.home,
     element: <App />,
   },
   {
-    path: `/todo/:userId`,
+    path: path.todo,
     element: <TodoForm />,
   },
   {
-    path: "/login",
+    path: path.login,
     element: <LoginPage />,
   },
   {
-    path: "/singup",
-    element: <SignupPage />,
-  }
-];  
+    path: path.signUp,
+    element: <SignUpPage />,
+  },
+  {
+    path: path.forgotPassword,
+    element: <ForgotPassword />,
+  },
+  {
+    path: path.profile,
+    element: <Profile />,
+  },
+];
 
 const router = createBrowserRouter(route);
 

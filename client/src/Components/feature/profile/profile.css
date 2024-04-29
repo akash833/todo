@@ -1,0 +1,17 @@
+.heading{
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 40px;
+    background-color: rgb(46, 46, 234);
+    color: rgb(249, 247, 248);
+}
+
+.profileWrapper{
+    max-width: 500px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.avatarImage{
+    margin: auto;
+}

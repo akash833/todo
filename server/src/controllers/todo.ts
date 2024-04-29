@@ -13,6 +13,7 @@ export async function getTodos(req: Request, res:Response) {
         _id: false,
       }
     );
+
     res.json({
       success: true,
       message: "get successfully",

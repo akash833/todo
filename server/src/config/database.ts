@@ -6,7 +6,7 @@ const connectDb = async () => {
   try {
     await mongoose.connect("mongodb://localhost:27017/todos");
   } catch (err) {
-    console.log("Uable to connect database");
+    console.log("Unable to connect database");
   }
 };
 
