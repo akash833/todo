@@ -3,7 +3,7 @@
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    padding: 20px 120px;
+    padding: 20px 40px;
     align-items: center;
     position: relative;
 }
@@ -12,4 +12,17 @@
     font-size: 30px;
     color: aliceblue;
 
+}
+
+.add{
+    display: flex;
+    gap: 30px;
+}
+
+
+.searchWrapper{
+    display: flex;
+    width: 80%;
+    margin: 40px auto;
+    gap: 10%;
 }

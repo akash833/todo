@@ -1,0 +1,20 @@
+.aboutWrapper{
+    display: flex;
+    padding: 30px 60px;
+    width: 100vw;
+    background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    box-sizing: border-box;
+    gap:30px
+}
+
+
+.underline{
+    width: 130px;
+    height: 5px;
+    background-color: blueviolet;
+}
+
+
+p{
+    font-size: 20px;
+}

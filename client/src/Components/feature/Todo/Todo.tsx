@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import List from "../List";
+import List from "../../../List";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Todo.css";
-import { Button, Popover, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Popover,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
+import MenuOption from "../../common/MenuOption";
 export interface TodoItem {
   title: string;
   description: string;
@@ -22,6 +32,11 @@ const TodoForm = () => {
   ]);
   const [title, setTitle] = useState<string>("");
   const [description, setDesc] = useState<string>("");
+  const [age, setAge] = useState("");
+
+  const handleChange = (event: any) => {
+    setAge(event.target.value as string);
+  };
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -87,9 +102,15 @@ const TodoForm = () => {
       <div className="header">
         <div className="app">Todo App</div>
         <div className="add">
-          <Button variant="contained" color="success" onClick={handleClick}>
+          <Button
+            variant="contained"
+            color="success"
+            onClick={handleClick}
+            sx={{ width: "300px" }}
+          >
             Add Todo
           </Button>
+          <MenuOption />
         </div>
       </div>
 
@@ -148,6 +169,28 @@ const TodoForm = () => {
           </form>
         </Typography>
       </Popover>
+
+      <div className="searchWrapper">
+        <TextField
+          id="outlined-basic"
+          label="Search by Title"
+          variant="outlined"
+          sx={{ width: "100%" }}
+        />
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={age}
+            label="Age"
+            onChange={handleChange}
+          >
+            <MenuItem value="priority">Priority</MenuItem>
+            <MenuItem value="CreatedBy">Created By</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
 
       {todo.map((item) => (
         <List

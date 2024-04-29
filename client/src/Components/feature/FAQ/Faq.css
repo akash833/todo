@@ -1,0 +1,10 @@
+.faqWrapper{
+    /* padding: 30px 60px; */
+    margin: 60px;
+}
+
+@media  (max-width:600px) {
+    .faqWrapper{
+        margin: 30px;
+    }
+}

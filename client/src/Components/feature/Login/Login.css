@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to bottom right, #bde7f3, #88d75a);
 }
 
 
@@ -12,6 +13,7 @@
     width:700px;
     display: flex;
     box-shadow: 5px 5px 5px 5px gray;
+    background-color: white;
 }
 
 .imageContainer{

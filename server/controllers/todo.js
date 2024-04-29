@@ -1,5 +1,6 @@
 import TodoModel from "../models/todo.js";
 // Always use Async await and try catch
+
 export async function getTodos(req, res) {
   try {
     const userId = req.params.userId;
@@ -12,7 +13,7 @@ export async function getTodos(req, res) {
         _id: false,
       }
     );
-    
+
     res.json({
       success: true,
       message: "get successfully",

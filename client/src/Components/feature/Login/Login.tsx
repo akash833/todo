@@ -16,6 +16,7 @@ import "./Login.css";
 
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import GoogleIcon from "@mui/icons-material/Google";
+import { path } from "../../../constant/path";
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -46,7 +47,7 @@ const LoginPage = () => {
   };
 
   const handleClick = () => {
-    navigate("/sign-up");
+    navigate(path.signUp);
   };
 
   return (
@@ -99,7 +100,7 @@ const LoginPage = () => {
                 label="Password"
               />
             </FormControl>
-            <span onClick={handleClick}>
+            <span>
               <Button
                 variant="text"
                 sx={{
@@ -107,6 +108,7 @@ const LoginPage = () => {
                     textDecorationLine: "underline",
                   },
                 }}
+                onClick={() => navigate(path.forgotPassword)}
               >
                 Forget Password?
               </Button>
@@ -117,7 +119,9 @@ const LoginPage = () => {
             <div style={{ textAlign: "center" }}>
               Create a new Account?
               <span onClick={handleClick}>
-                <Button variant="text">Sign Up</Button>
+                <Button variant="text" onClick={() => navigate(path.signUp)}>
+                  Sign Up
+                </Button>
               </span>
             </div>
             <div className="btnWrapper">

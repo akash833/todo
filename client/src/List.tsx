@@ -1,4 +1,4 @@
-import { TodoItem } from "./Components/Todo";
+import { TodoItem } from "./Components/feature/Todo/Todo";
 import "./list.css";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
